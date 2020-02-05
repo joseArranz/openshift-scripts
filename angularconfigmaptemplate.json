@@ -1,0 +1,52 @@
+{
+    "apiVersion": "v1",
+    "kind": "Template",
+    "labels": {
+        "template": "angular-configmap-template"
+    },
+    "message": "Config Map angular",
+    "metadata": {
+        "annotations": {
+            "description": "Config Map angular"
+            
+        },
+        "name": "angular-configmap-template"
+    },
+	"objects": [		
+		{
+		"kind": "ConfigMap",
+		"apiVersion": "v1",
+		"metadata": {
+			"name": "${ANGULAR_TEMPLATE_NAME}"
+		 },
+		 "data": {
+			"serviceUrl": "${BACKEND_SERVICE_HOST}",
+			"serviceKafkaUrl": "${BACKEND_KAFKA_HOST}"
+		 }
+		}
+	
+	],
+		  "parameters": [
+				{
+					"description": "",
+					"displayName": "",
+					"name": "ANGULAR_TEMPLATE_NAME",
+					"required": true,
+					"value": "angular-configmap"
+				},
+				{
+					"description": "",
+					"displayName": "",
+					"name": "BACKEND_SERVICE_HOST",
+					"required": true,
+					"value": "springcloud.jarranzz.svc"
+				},
+				{
+					"description": "",
+					"displayName": "",
+					"name": "BACKEND_KAFKA_HOST",
+					"required": true,
+					"value": "springcloud.jarranzz.svc"
+				}
+			]
+}

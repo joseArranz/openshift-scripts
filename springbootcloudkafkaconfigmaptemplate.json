@@ -1,0 +1,52 @@
+{
+    "apiVersion": "v1",
+    "kind": "Template",
+    "labels": {
+        "template": "kafka-configmap-template"
+    },
+    "message": "Config Map kafka Spring Boot",
+    "metadata": {
+        "annotations": {
+            "description": "Config Map kafka Spring Boot"
+            
+        },
+        "name": "kafka-configmap-template"
+    },
+	"objects": [		
+		{
+		"kind": "ConfigMap",
+		"apiVersion": "v1",
+		"metadata": {
+			"name": "${KAFKA_TEMPLATE_NAME}"
+		 },
+		 "data": {
+			"app.kafka.host": "${KAFKA_HOST}",			
+			"app.kafka.port": "${KAFKA_PORT}"
+		 }
+		}
+	
+	],
+		  "parameters": [
+				{
+					"description": "",
+					"displayName": "",
+					"name": "KAFKA_TEMPLATE_NAME",
+					"required": true,
+					"value": "kafka-configmap"
+				},
+				{
+					"description": "",
+					"displayName": "",
+					"name": "KAFKA_HOST",
+					"required": true,
+					"value": "my-cluster-kafka-bootstrap.jarranzz.svc"
+				},
+				{
+					"description": "",
+					"displayName": "",
+					"name": "KAFKA_PORT",
+					"required": true,
+					"value": "my-cluster-kafka-bootstrap.jarranzz.svc"
+				}
+			]
+}

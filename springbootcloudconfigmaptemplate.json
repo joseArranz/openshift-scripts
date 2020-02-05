@@ -1,0 +1,76 @@
+{
+    "apiVersion": "v1",
+    "kind": "Template",
+    "labels": {
+        "template": "mongo-configmap-template"
+    },
+    "message": "Config Map MongoDB Spring Boot",
+    "metadata": {
+        "annotations": {
+            "description": "Config Map MongoDB Spring Boot"
+            
+        },
+        "name": "mongo-configmap-template"
+    },
+	"objects": [		
+		{
+		"kind": "ConfigMap",
+		"apiVersion": "v1",
+		"metadata": {
+			"name": "${MONGODB_TEMPLATE_NAME}"
+		 },
+		 "data": {
+			"app.mongo.user": "${MONGODB_USER}",
+			"app.mongo.pass": "${MONGODB_PASSWORD}",
+			"app.mongo.host": "${MONGODB_HOST}",
+			"app.mongo.port": "${MONGODB_PORT}",
+			"app.mongo.schema": "${MONGODB_DATABASE}"
+		 }
+		}
+	
+	],
+		  "parameters": [
+				{
+					"description": "",
+					"displayName": "",
+					"name": "MONGODB_TEMPLATE_NAME",
+					"required": true,
+					"value": "user"
+				},
+				{
+					"description": "",
+					"displayName": "",
+					"name": "MONGODB_USER",
+					"required": true,
+					"value": "user"
+				},
+				{
+					"description": "",
+					"displayName": "",
+					"name": "MONGODB_PASSWORD",
+					"required": true,
+					"value": "user"
+				},
+				{
+					"description": "",
+					"displayName": "",
+					"name": "MONGODB_HOST",
+					"required": true,
+					"value": "mongodb.jarranzz.svc"
+				},
+				{
+					"description": "",
+					"displayName": "",
+					"name": "MONGODB_PORT",
+					"required": true,
+					"value": "27017"
+				},
+				{
+					"description": "",
+					"displayName": "",
+					"name": "MONGODB_DATABASE",
+					"required": true,
+					"value": "sampledb"
+				}
+			]
+}
