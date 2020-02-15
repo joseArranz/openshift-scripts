@@ -1,9 +1,9 @@
-oc login 172.18.71.124:8443 -u admin -p admin
+::oc login 172.18.71.124:8443 -u admin -p admin
+oc login --token=hC1ewPyT8D3PLECNMtlpNtZiyZDm9Coa5BvjCVz2Gug --server=https://api.crc.testing:6443
 
-
-oc delete template --all
-oc delete project jarranzz
-oc new-project jarranzz
+::oc delete template --all
+::oc delete project jarranzz
+::oc new-project jarranzz
 :End
 PAUSE
 
@@ -15,7 +15,7 @@ PAUSE
 ::kafka
 ::https://strimzi.io/documentation/
 ::https://operatorhub.io/operator/strimzi-kafka-operator
-oc apply -f strimzi-user-operator-0.16.1
+oc apply -f strimzi-user-operator-0.16.1.yaml
 oc apply -f strimzi-topic-operator-0.16.1.yaml
 oc apply -f strimzi-cluster-operator-0.16.1.yaml
 oc apply -f kafka-persistent-single.yaml -n jarranzz

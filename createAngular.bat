@@ -1,5 +1,5 @@
-oc login https://172.17.90.212:8443  -u admin -p admin
-
+::oc login https://172.17.90.212:8443  -u admin -p admin
+oc login --token=hC1ewPyT8D3PLECNMtlpNtZiyZDm9Coa5BvjCVz2Gug --server=https://api.crc.testing:6443
 
 ::oc delete template --all
 ::oc delete project jarranzz
